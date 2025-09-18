@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Country.css";
 
-const Country = ({ country }) => {
+const Country = ({country, handleVisitedCountries}) => {
   const [visited, setVisited] = useState(false);
   const handleVisit = () => {
     //  First System
@@ -15,6 +15,7 @@ const Country = ({ country }) => {
     // setVisited(visited ? false : true)
     // Third System
     setVisited(!visited)
+    handleVisitedCountries(country)
   };
   return (
     <div className={`country ${visited && "country-visited"}`}>
